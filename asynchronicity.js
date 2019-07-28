@@ -9,7 +9,7 @@ function testMe() {
   console.log('Partnah');
 }
 // After thinking it through, uncomment the following line to check your guess!
-// testMe(); // what order should these log out? Howdy or Partnah first?
+testMe(); // what order should these log out? Howdy or Partnah first?
 
 
 /* CHALLENGE 2 */
