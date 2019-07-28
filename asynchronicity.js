@@ -45,10 +45,19 @@ brokenRecord(); // should log (every second): hi again
 /* CHALLENGE 5 */
 
 function limitedRepeat() {
-  // ADD CODE HERE
+  let counter = 0;
+  const cb = () => {
+    if (counter === 5) {
+      clearInterval(intervalId);
+      return;
+    }
+    counter++;
+    console.log(`hi for now ${counter}`);
+  }
+  const intervalId = setInterval(cb, 1000);
 }
 // Uncomment the following line to check your work!
-// limitedRepeat(); // should log (every second, for 5 seconds): hi for now
+limitedRepeat(); // should log (every second, for 5 seconds): hi for now
 
 
 /* CHALLENGE 6 */
