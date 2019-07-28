@@ -25,18 +25,21 @@ delayedGreet(); // should log (after 3 seconds): welcome
 
 function helloGoodbye() {
   // ADD CODE HERE
+  console.log('hello');
+  setTimeout(() => console.log('good bye'), 3000);
 }
 // Uncomment the following line to check your work!
-// helloGoodbye(); // should log: hello // should also log (after 3 seconds): good bye
+helloGoodbye(); // should log: hello // should also log (after 3 seconds): good bye
 
 
 /* CHALLENGE 4 */
 
 function brokenRecord() {
-  // ADD CODE HERE
+  const cb = () => console.log('hi again');
+  setInterval(cb, 1000);
 }
 // Uncomment the following line to check your work!
-// brokenRecord(); // should log (every second): hi again
+brokenRecord(); // should log (every second): hi again
 
 
 /* CHALLENGE 5 */
