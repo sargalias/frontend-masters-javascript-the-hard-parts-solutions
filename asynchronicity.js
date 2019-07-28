@@ -15,10 +15,10 @@ testMe(); // what order should these log out? Howdy or Partnah first?
 /* CHALLENGE 2 */
 
 function delayedGreet() {
-  // ADD CODE HERE
+  setTimeout(() => console.log('welcome'), 3000);
 }
 // Uncomment the following line to check your work!
-// delayedGreet(); // should log (after 3 seconds): welcome
+delayedGreet(); // should log (after 3 seconds): welcome
 
 
 /* CHALLENGE 3 */
