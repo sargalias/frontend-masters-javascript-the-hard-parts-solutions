@@ -40,10 +40,20 @@ console.log(map([1, 2, 3], addTwo));
 
 // Challenge 4
 function forEach(array, callback) {
+  // Approach 1 (without Array.prototype.forEach)
+  for (let i = 0; i < array.length; i++) {
+    callback(array[i], i, array);
+  }
 
+  // Approach 2
+  // array.forEach(callback);
 }
 
 // see for yourself if your forEach works!
+const forEachResult = [];
+const forEachCallback = (el) => forEachResult.push(el * 2);
+forEach([1, 2, 3], forEachCallback);
+console.log(forEachResult); // should be [2, 4, 6]
 
 
 //--------------------------------------------------
