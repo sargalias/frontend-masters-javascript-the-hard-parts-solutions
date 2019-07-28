@@ -3,12 +3,15 @@ console.log('Hello, world!');
 
 
 function createFunction() {
-
+  function printHelloWorld() {
+    console.log('Hello world!');
+  }
+  return printHelloWorld;
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
-// var function1 = createFunction();
-// function1();
+var function1 = createFunction();
+function1();
 
 
 
