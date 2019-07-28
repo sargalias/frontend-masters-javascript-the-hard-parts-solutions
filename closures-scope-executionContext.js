@@ -16,14 +16,17 @@ function1();
 
 
 function createFunctionPrinter(input) {
-
+  function printInput() {
+    console.log(input);
+  }
+  return printInput;
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
-// var printSample = createFunctionPrinter('sample');
-// printSample();
-// var printHello = createFunctionPrinter('hello');
-// printHello();
+var printSample = createFunctionPrinter('sample');
+printSample();
+var printHello = createFunctionPrinter('hello');
+printHello();
 
 
 
