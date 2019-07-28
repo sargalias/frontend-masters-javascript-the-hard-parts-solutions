@@ -14,12 +14,12 @@ console.log(addTwo(10));
 
 // Challenge 2
 function addS(word) {
-
+  return word + 's';
 }
 
 // uncomment these to check your work
-// console.log(addS('pizza'));
-// console.log(addS('bagel'));
+console.log(addS('pizza'));
+console.log(addS('bagel'));
 
 
 // Challenge 3
