@@ -62,11 +62,23 @@ limitedRepeat(); // should log (every second, for 5 seconds): hi for now
 
 /* CHALLENGE 6 */
 
-function everyXsecsForYsecs() {
-  // ADD CODE HERE
+function everyXsecsForYsecs(cb, interval, untilTime) {
+  let counter = 0;
+  const maxCounterValue = untilTime / interval;
+
+  const wrappedCb = () => {
+    counter++;
+    if (counter > maxCounterValue) {
+      clearInterval(intervalId);
+      return
+    }
+    cb();
+  };
+
+  const intervalId = setInterval(wrappedCb, interval * 1000);
 }
 // Uncomment the following lines to check your work!
-// function theEnd() {
-//   console.log('This is the end!');
-// }
-// everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
+function theEnd() {
+  console.log('This is the end!');
+}
+everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
