@@ -24,10 +24,18 @@ console.log(addS('bagel'));
 
 // Challenge 3
 function map(array, callback) {
+  // approach 1 (without Array.prototype.map);
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(callback(array[i], i, array));
+  }
+  return result;
 
+  // approach 2
+  // return array.map(callback);
 }
 
-// console.log(map([1, 2, 3], addTwo));
+console.log(map([1, 2, 3], addTwo));
 
 
 // Challenge 4
