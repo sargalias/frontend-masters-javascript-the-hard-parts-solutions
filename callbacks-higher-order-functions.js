@@ -146,10 +146,31 @@ console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 
 //Extension 5
 function objOfMatches(array1, array2, callback) {
+  // Normal approach
+  const result = {};
+  for (let i = 0; i < Math.min(array1.length, array2.length); i++) {
+    const key = array1[i];
+    const value = callback(key);
+    if (value === array2[i]) {
+      result[key] = value;
+    }
+  }
+  return result;
 
+  // Challenge approach
+  /*
+  return reduce(array1, (accumulator, el, i) => {
+    const key = el;
+    const value = callback(el);
+    console.log(i);
+    if (value === array2[i]) {
+      accumulator[key] = value;
+    }
+  }, {});
+  */
 }
 
-// console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
+console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
