@@ -62,7 +62,10 @@ console.log(forEachResult); // should be [2, 4, 6]
 
 //Extension 1
 function mapWith(array, callback) {
-
+  const result = [];
+  const cb = el => result.push(callback(el));
+  forEach(array, cb);
+  return result;
 }
 
 //Extension 2
