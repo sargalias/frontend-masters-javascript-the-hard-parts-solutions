@@ -87,14 +87,15 @@ sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
 function PersonConstructor() {
   // add code here
-
-
+  this.greet = function() {
+    console.log('hello');
+  }
 }
 
 
 // /********* Uncomment this line to test your work! *********/
 var simon = new PersonConstructor;
-// simon.greet(); // -> Logs 'hello'
+simon.greet(); // -> Logs 'hello'
 
 
 
