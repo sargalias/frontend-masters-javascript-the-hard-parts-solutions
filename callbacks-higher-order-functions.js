@@ -123,11 +123,25 @@ console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {
+function union(...arrays) {
+  // Challenge approach
+  /*
+  const resultSet = reduce(arrays, (accumulator, array) => {
+    forEach(array, el => accumulator.add(el));
+  }, new Set());
+  return [...resultSet.values()];
+  */
 
+
+  // Normal approach
+  const resultSet = new Set();
+  arrays.forEach(array => {
+    array.forEach(el => resultSet.add(el));
+  })
+  return [...resultSet.values()];
 }
 
-// console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
