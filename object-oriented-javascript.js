@@ -35,12 +35,14 @@ console.log(vicky.age); // -> Logs 24
 
 var personStore = {
   // add code here
-
+  greet() {
+    console.log('hello');
+  }
 
 };
 
 // /********* Uncomment this line to test your work! *********/
-// personStore.greet(); // -> Logs 'hello'
+personStore.greet(); // -> Logs 'hello'
 
 
 
