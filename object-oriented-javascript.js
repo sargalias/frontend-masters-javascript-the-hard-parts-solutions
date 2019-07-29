@@ -133,27 +133,28 @@ mike.introduce(); // -> Logs 'Hi, my name is Mike'
                         USING ES6 CLASSES
 ****************************************************************/
 
-/*** CHALLENGE 1 of 3 ***/
+/*** CHALLENGE 1 of 2 ***/
 
 class PersonClass {
-  constructor() {
+  constructor(name) {
     // add code here
-
-
+    this.name = name;
   }
 
   // add code here
-
+  greet() {
+    console.log('hello');
+  }
 }
 
 
 // /********* Uncomment this line to test your work! *********/
 var george = new PersonClass;
-// george.greet(); // -> Logs 'hello'
+george.greet(); // -> Logs 'hello'
 
 
 
-/*** CHALLENGE 2 of 3 ***/
+/*** CHALLENGE 2 of 2 ***/
 
 // add code here
 
