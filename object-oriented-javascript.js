@@ -157,12 +157,21 @@ george.greet(); // -> Logs 'hello'
 /*** CHALLENGE 2 of 2 ***/
 
 // add code here
+class DeveloperClass extends PersonClass {
+  constructor(name) {
+    super(name);
+  }
+
+  introduce() {
+    console.log(`Hello World, my name is ${this.name}`);
+  }
+}
 
 
 // /********* Uncomment these lines to test your work! *********/
-// var thai = new DeveloperClass('Thai', 32);
-// console.log(thai.name); // -> Logs 'Thai'
-// thai.introduce(); //-> Logs 'Hello World, my name is Thai'
+var thai = new DeveloperClass('Thai', 32);
+console.log(thai.name); // -> Logs 'Thai'
+thai.introduce(); //-> Logs 'Hello World, my name is Thai'
 
 
 
