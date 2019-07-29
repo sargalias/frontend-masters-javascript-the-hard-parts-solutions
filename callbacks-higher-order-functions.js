@@ -70,7 +70,9 @@ function mapWith(array, callback) {
 
 //Extension 2
 function reduce(array, callback, initialValue) {
-
+  let accumulator = initialValue;
+  forEach(array, (el, i, array) => callback(accumulator, el, i, array));
+  return accumulator;
 }
 
 //Extension 3
