@@ -103,17 +103,19 @@ simon.greet(); // -> Logs 'hello'
 
 function personFromConstructor(name, age) {
   // add code here
-
-
+  const person = new PersonConstructor();
+  person.name = name;
+  person.age = age;
+  return person
 }
 
 var mike = personFromConstructor('Mike', 30);
 
 
 // /********* Uncomment these lines to test your work! *********/
-// console.log(mike.name); // -> Logs 'Mike'
-// console.log(mike.age); //-> Logs 30
-// mike.greet(); //-> Logs 'hello'
+console.log(mike.name); // -> Logs 'Mike'
+console.log(mike.age); //-> Logs 30
+mike.greet(); //-> Logs 'hello'
 
 
 
