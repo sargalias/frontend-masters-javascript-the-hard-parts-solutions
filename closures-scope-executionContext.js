@@ -114,5 +114,7 @@ afterCalled(); // -> 'hello' is printed
 
 
 function delay(func, wait) {
-
+  setTimeout(func, wait);
 }
+
+delay(() => console.log('hi'), 2000);
