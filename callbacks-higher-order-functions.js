@@ -76,11 +76,50 @@ function reduce(array, callback, initialValue) {
 }
 
 //Extension 3
-function intersection(arrays) {
+function intersection(...arrays) {
+  // log(n) time
+  // we create an object with { key: counter }
+  // If counter is not equal to the current array index we ignore it. This prevents incrementing the coutner multiple times for the same array (duplicate numbers). Consequently it also ignores numbers which have already not been present in every array.
+  // In the end if the counter === the number of arrays, we know that number is in every array.
+  const obj = {};
+  arrays.forEach((array, arraysIndex) => {
+    array.forEach(el => {
+      const counter = obj[el] || 0;
+      if (counter === arraysIndex) {
+        obj[el] = counter + 1;
+      }
+    });
+  });
+  const result = [];
+  Object.entries(obj).forEach(([k, v]) => {
+    if (v === arrays.length) {
+      result.push(k);
+    }
+  });
+  return result;
 
+  // log(n^2) time
+  /*
+  if (arrays.length === 0) {
+    return [];
+  }
+  const firstArray = arrays[0];
+  return reduce(firstArray, (result, el) => {
+    // Check element appears in every array
+    for (let array of arrays) {
+      if (!array.includes(el)) {
+        return;
+      }
+    }
+    // If element is not already in result, add it to result
+    if (!result.includes(el)) {
+      result.push(el);
+    }
+  }, []);
+  */
 }
 
-// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
 
 //Extension 4
