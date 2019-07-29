@@ -55,15 +55,19 @@ willCounter();
 
 
 function addByX(x) {
-
+  return function(y) {
+    return x + y;
+  }
 }
 
 var addByTwo = addByX(2);
 
 // now call addByTwo with an input of 1
+console.log(addByTwo(1));
 
 
 // now call addByTwo with an input of 2
+console.log(addByTwo(2));
 
 
 
